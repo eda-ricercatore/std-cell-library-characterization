@@ -1,0 +1,441 @@
+==================================================
+Automating incremental regression testing of my software
+	solution for genetic technology mapping.
+
+=	Process the first input argument.
+==	Is the 1st input argument a valid path to a file?
+==	Does 1st input argument have a JSON file extension?
+=	Create a file object for reading.
+-	-	-	-	-	-	-	-	-	-	-	-	-
+=	Testing the statistical analysis package.
+
+==	Testing class: statistical_analysis
+	Number of initial test cases passed: 0			OK
+	Number of initial test cases used: 0			OK
+	Proportion of initial test cases passed: 0		OK
+	Test case number is: 1					OK.
+	Number of test cases passed: 1				OK
+	Number of test cases used: 1				OK
+	Proportion of test cases passed: 100.0			OK
+	Test case number is: 2					OK.
+	Number of test cases passed: 2				OK
+	Number of test cases used: 2				OK
+	Proportion of test cases passed: 100.0			OK
+	Test case number is: 3					OK.
+	Number of test cases passed: 3				OK
+	Number of test cases used: 3				OK
+	Proportion of test cases passed: 100.0			OK
+	Test case number is: 4					OK.
+	Number of test cases passed: 4				OK
+	Number of test cases used: 4				OK
+	Proportion of test cases passed: 100.0			OK
+	Test case number is: 5					OK.
+	Number of test cases passed: 5				OK
+	Number of test cases used: 5				OK
+	Proportion of test cases passed: 100.0			OK
+	Test case number is: 6					OK.
+	Number of test cases passed: 6				OK
+	Number of test cases used: 6				OK
+	Proportion of test cases passed: 100.0			OK
+
+
+==	Testing class: data_type_n_number_ops.
+
+	Testing is_list_of_numbers() method.
+	... Test: is_list_of_numbers(None) == False		OK
+	... Test: is_list_of_numbers(not_a_list_obj) == False	OK
+	... Test: is_list_of_numbers([]) == False		OK
+	... Test: is_list...numb(lst_not_pure_numb_1) == False	OK
+	... Test: is_list...numb(lst_not_pure_numb_2) == False	OK
+	... Test: is_list...numb(lst_not_pure_numb_3) == False	OK
+	... Test: is_list...numb(lst_not_pure_numb_4) == False	OK
+	... Test: is_list...numb(lst_not_pure_numb_5) == False	OK
+	... Test: is_list...numb(lst_pure_pos_integers) == True	OK
+	... Test: is_list...numb(lst_integers_not_pos) == True	OK
+	... Test: is_list...numb(lst_integers_neg_0) == True	OK
+	... Test: is_list...numb(lst_pure_fp_num) == True	OK
+	... Test: is_list...numb(lst_pure_neg_fp_num) == True	OK
+	... Test: is_list...numb(lst_pure_0s) == True		OK
+	... Test: is_list...numb([0]) == True			OK
+	... Test: is_list...numb([-56970]) == True		OK
+	... Test: is_list...numb([723]) == True			OK
+	... Test: is_list...numb(lst_fp_int_only) == True	OK
+
+	Testing is_tuple_of_tuples() method.
+	... Test: is_tuple_of_tuples(None) == False		OK
+	... Test: is_tuple_of_tuples(not_a_tuple_obj) == False	OK
+	... Test: is_tuple_of_tuples(()) == False		OK
+	... Test: is_tup_of_tups(tuple of numbers) == False	OK
+	... Test: is...(tuple of numbers & strings) == False	OK
+	... Test: is_tup_of_tups(tuple of a tuple - 1) == True	OK
+	... Test: is_t_of_ts(tuple of a tuple - 2) == True	OK
+	... Test: is_t_of_ts(tuple of a tuple - 3) == True	OK
+	... Test: is_t_of_ts(tup of tups & object) == False	OK
+	... Test: is_t_of_ts(tup of tups & string) == False	OK
+	... Test: is_t_of_ts(tup of tups & number) == False	OK
+	... Test: is_t_of_ts(tup of tups) == True		OK
+	... is_t_of_ts(t of ts) == True, subtup with tuple	OK
+
+	Testing is_elem_in_tuple_of_tuples() method.
+	... i/p arguments: (None,None) => False			OK
+	... i/p args: (not_a_tuple_obj,tuple) => False		OK
+	i/p args: (None,tuple_of_tuples) => False		OK
+	i/p args: ('not found',tuple_of_tuples) => False	OK
+	i/p args: (21.3243,tuple_of_tuples) => False		OK
+	i/p args: (6734,tuple_of_tuples) => False		OK
+	i/p args: (random_obj,tuple_of_tuples) => False		OK
+	i/p args: (not_a_tuple_obj,tuple_of_tuples) => True	OK
+	i/p args: (46,tuple_of_tuples) => True			OK
+	i/p args: ('Hola todos',tuple_of_tuples) => True	OK
+	i/p args: (object_b,tuple_of_tuples) => True		OK
+	i/p args: (None,another_tuple_of_tuples) => True	OK
+	i/p args: (a_tuple,another_tuple_of_tuples) => True	OK
+
+	Testing is_binary_string() method.
+	... Test: is_binary_string(None) == False		OK
+	... Test: is_binary_string(not_a_bin_str) == False	OK
+	... Test: is_binary_string('') == False			OK
+	... Test: is_binary_string(23) == False			OK
+	... Test: is_binary_string('23') == False		OK
+	... Test: is_binary_string('0b728346') == False		OK
+	... Test: is_binary_string('0101101') == True		OK
+	... Test: is_binary_string('0b0001101') == True		OK
+	... Test: is_binary_string('1101') == True		OK
+	... Test: is_binary_string('0b10101011') == True	OK
+
+	Testing convert_bin_str_to_list_of_0s_1s() method.
+	... Test: convert_bin_str_to_0_1_list(None) == None	OK
+	... Test: conv_binstr_to_0_1_list(not_bin_str) == None	OK
+	... Test: convert_bin_str_to_0_1_list('') == None	OK
+	... Test: convert_bin_str_to_list(23) == None		OK
+	... Test: convert_bin_str_to_list('23') == None		OK
+	... Test: convert_bin_str_to_list('1073262') == None	OK
+	... Test: '0' == [0]					OK
+	... Test: '010011' == [0,1,0,0,1,1]			OK
+	... Test: '00011011' == [0,0,0,1,1,0,1,1]		OK
+	... Test: '0b0' == [0]					OK
+	... Test: '0b01011' == [0,1,0,1,1]			OK
+	... Test: '110101' == [1,1,0,1,0,1]			OK
+	... Test: '1' == [1]					OK
+	... Test: '11' == [1,1]					OK
+	... Test: '0b1' == [1]					OK
+	... Test: '0b1101' == [1,1,0,1]				OK
+	... Test: '0b1000111' == [1,0,0,0,1,1,1]		OK
+
+
+-------------------------------------------------
+==	Testing class: data_analysis.
+	Testing get_reference_value() method.
+	... Test: get_reference_value(c) == 299792458		OK
+	... Test: method with default option == 299792458	OK
+	... Test: get_reference_value(g) == 9.80665		OK
+	... Test: get_reference_value(std atm) == 101325	OK
+	... Test: get_ref..._val('random string') == 101325	OK
+
+	Testing get_actual_change() method.
+	... Test: default option, get_actual_change(0,0) == 0	OK
+	... Test: get_actual_change(19,13) == 6			OK
+	... Test: get_actual_change(10,14) == -4		OK
+	... Test: get_actual_change(-20,27) == -47		OK
+	... Test: get_actual_change(-7,-3) == -4		OK
+	... Test: get_actual_change(-4,-9) == 5			OK
+	... Test: get_actual_change(3,-4) == 7			OK
+	... Test: get_act...(object,569) == None		OK
+	... Test: get_act...(865.12,'Buona serata!') == None	OK
+	... Test: get_act...(97623.23,None) == None		OK
+
+	Testing get_absolute_difference() method.
+	...Test:default,get_absolute_difference(0,0) == 0	OK
+	... Test: get_absolute_difference(19,13) == 6		OK
+	... Test: get_absolute_difference(10,14) == 4		OK
+	... Test: get_absolute_difference(-20,27) == 47		OK
+	... Test: get_absolute_difference(-7,-3) == 4		OK
+	... Test: get_absolute_difference(-4,-9) == 5		OK
+	... Test: get_absolute_difference(3,-4) == 7		OK
+	... Test: get_abs..._diff(object,569) == None		OK
+	... Test: get_abs..._diff(865.12,'Buona...') == None	OK
+	... Test: get_abs..._diff(112.08723,None) == None	OK
+
+	Testing get_relative_change() method.
+	... Test: default, get_relative_change(1,1) == 0	OK
+	... Test: get_relative_change(15,12) == 0.25		OK
+	... Test: get_relative_change(18,20) == -0.10		OK
+	... Test: get_relative_change(-97,-100) == -0.03	OK
+	... Test: get_relative_change(3,0) can't compute	OK
+	...Test: get_relative_change(-100,-110) ~ -0.0909090909 OK
+	...Test: get_relative_change(-98,-105) ~ -0.06666666666	OK
+	... Test: get_rel..._change(object,569) == None		OK
+	... Test: get_rel..._change(865.12,'Buona...') == None	OK
+	... Test: get_rel..._change(232,None) == None		OK
+
+	Testing get_percentage_change() method.
+	... Test: default, get_percentage_change(1,1) == 0	OK
+	... Test: get_percentage_change(15,12) == 0.25		OK
+	... Test: get_percentage_change(18,20) == -0.10		OK
+	... Test: get_percentage_change(-97,-100) == -0.03	OK
+	... Test: get_percentage_change(3,0) can't compute	OK
+	..Test:get_percentage_change(-100,-110) ~ -0.0909090909 OK
+	..Test:get_percentage_change(-98,-105) ~ -0.06666666666 OK
+	... Test: get_pct_change(object,569) == None		OK
+	... Test: get_pct_change(865.12,'Buona...') == None	OK
+	... Test: get_pct_change(232,None) == None		OK
+
+	Testing get_relative_error() method.
+	... Test: default, get_relative_error(1,1) == 0		OK
+	... Test: get_relative_error(15,12) == 0.25		OK
+	... Test: get_relative_error(16,20) == 0.2		OK
+	... Test: get_relative_error(-9,-10) == 0.1		OK
+	... Test: get_relative_error(-13,-10) == 0.3		OK
+	... Test: get_relative_error(-3,-2) == 0.5		OK
+	... Test: get_relative_error(3,0) can't compute		OK
+	... Test: get_rel..._err(object,7643) == None		OK
+	... Test: get_rel..._err(67923.23,'Buona...') == None	OK
+	... Test: get_rel..._err(8346,None) == None		OK
+
+	Testing get_percent_error() method.
+	... Test: default, get_percent_error(1,1) == 0		OK
+	... Test: get_percent_error(15,12) == 25		OK
+	... Test: get_percent_error(16,20) == 0.2		OK
+	... Test: get_percent_error(-9,-10) == 0.1		OK
+	... Test: get_percent_error(-13,-10) == 0.3		OK
+	... Test: get_percent_error(-3,-2) == 0.5		OK
+	... Test: get_percent_error(3,0) can't compute		OK
+	... Test: get_pct_err(object,6325) == None		OK
+	... Test: get_pct_err(8.212,'Buona...') == None		OK
+	... Test: get_pct_err(362,None) == None			OK
+
+	Testing get_arithmetic_average_of_absolute_values() method.
+	... Test: list_of_numbers is None			OK
+	... Test: list_of_numbers is '', empty string		OK
+	... Test: list_of_numbers is 'Ciao mondo!', a string	OK
+	... Test: list_of_numbers is 'not_a_list_obj'		OK
+	... Test: list_of_numbers is [], empty list		OK
+	... Test: list_of_numbers is 'list_not_pure_numbers'	OK
+	... Test: [23,-46,12,13,65,-75,10,0.23423,-56,38]	OK
+	... Test: [2,5,7,9,1,4,8]				OK
+	Test:[0,-5,-235,-345.346346,-34534.67239,-23408,-0.242]	OK
+	... Test: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]		OK
+	... Test: [-743024.367935]				OK
+
+	Testing get_relative_difference() method.
+	... Test: default get_relative_difference(1,1) == 0	OK
+	...Test:get_rel..._diff(not_number_obj,56897) == None	OK
+	...Test:get_rel..._diff(-32.15, not_number_obj)==None	OK
+	... Test: get_rel..._diff(-32.15, []) == None		OK
+	... Test: get_rel..._diff(972, [623, 2032]) == None	OK
+	... Test: get_rel..._diff('Hola', 96) == None		OK
+	... Test: get_rel..._diff(0, 0) == None			OK
+	... Test: get_rel..._diff(5, 5) == 0			OK
+	... Test: get_rel..._diff(-1.23, -1.23) == 0		OK
+	... Test: get_rel..._diff(-48, -48) == 0		OK
+	... Test: get_rel..._diff(9.23, 9.23) == 0		OK
+	... Test: get_rel..._diff(15, 12) == 0.22222222222	OK
+	... Test: get_rel..._diff(45, 50) == 0.10526315789	OK
+	... Test: get_rel..._diff(-30,-35) == 0.15384615384	OK
+	... Test: get_rel..._diff(-2.8,-2.41) == 0.14971209213	OK
+	... Test: get_rel..._diff(8.1,8.73) == 0.07486631016	OK
+	... Test: get_rel..._diff(-2,1.5) == 2			OK
+	... Test: get_rel..._diff(1.5,-2) == 2			OK
+
+	Testing get_relative_percentage_difference() method.
+	... Test: default get_rel_pct_diff(1,1) == 0		OK
+	...Test:get_rel_pct_diff(not_number_obj,56897) == None	OK
+	...Test:get_rel_pct_diff(-32.15, not_number_obj)==None	OK
+	... Test: get_rel_pct_diff(-32.15, []) == None		OK
+	... Test: get_rel_pct_diff(972, [623, 2032]) == None	OK
+	... Test: get_rel_pct_diff('Hola', 96) == None		OK
+	... Test: get_rel_pct_diff(0, 0) == None		OK
+	... Test: get_rel_pct_diff(5, 5) == 0			OK
+	... Test: get_rel_pct_diff(-1.23, -1.23) == 0		OK
+	... Test: get_rel_pct_diff(-48, -48) == 0		OK
+	... Test: get_rel_pct_diff(9.23, 9.23) == 0		OK
+	... Test: get_rel_pct_diff(15, 12) == 22.2222222222	OK
+	... Test: get_rel_pct_diff(45, 50) == 10.526315789	OK
+	... Test: get_rel_pct_diff(-30,-35) == 15.384615384	OK
+	... Test: get_rel_pct_diff(-2.8,-2.41) == 14.971209213	OK
+	... Test: get_rel_pct_diff(8.1,8.73) == 7.486631016	OK
+	... Test: get_rel_pct_diff(-2,1.5) == 200		OK
+	... Test: get_rel_pct_diff(1.5,-2) == 200		OK
+
+-	-	-	-	-	-	-	-	-	-	-	-	-
+
+=	Testing the utilities package.
+
+
+==	Testing class: calculate_factorial.
+	Testing calculate_factorial.get_factorial_iteration() method.
+	... Test: get_factorial_iteration(0)			OK.
+	... Test: get_factorial_iteration(1)			OK.
+	... Test: get_factorial_iteration(2)			OK.
+	... Test: get_factorial_iteration(3)			OK.
+	... Test: get_factorial_iteration(4)			OK.
+	... Test: get_factorial_iteration(5)			OK.
+	... Test: get_factorial_iteration(6)			OK.
+	... Test: get_factorial_iteration(7)			OK.
+	... Test: get_factorial_iteration(8)			OK.
+	... Test: get_factorial_iteration(9)			OK.
+	... Test: get_factorial_iteration(10)			OK.
+	... Test: get_factorial_iteration('my string')		OK.
+	... Test: get_factorial_iteration('125.23429')		OK.
+	... Test: get_factorial_iteration(None)			OK.
+	... Test: get_factorial_iteration(-345)			OK.
+
+	Testing calculate_factorial.get_factorial_recursion() method.
+	... Test: get_factorial_recursion(0)			OK.
+	... Test: get_factorial_recursion(1)			OK.
+	... Test: get_factorial_recursion(2)			OK.
+	... Test: get_factorial_recursion(3)			OK.
+	... Test: get_factorial_recursion(4)			OK.
+	... Test: get_factorial_recursion(5)			OK.
+	... Test: get_factorial_recursion(6)			OK.
+	... Test: get_factorial_recursion(7)			OK.
+	... Test: get_factorial_recursion(8)			OK.
+	... Test: get_factorial_recursion(9)			OK.
+	... Test: get_factorial_recursion(10)			OK.
+	... Test: get_factorial_recursion('my string')		OK.
+	... Test: get_factorial_recursion('125.23429')		OK.
+	... Test: get_factorial_recursion(None)			OK.
+	... Test: get_factorial_recursion(-345)			OK.
+
+
+
+==	Testing class: execution_time_measurement_no_ns.
+	Testing set, reset, get initial timestamp methods.
+	... Test: get_initial_timestamp() is invalid		OK.
+	... Test: set_initial_timestamp() not invalid		OK.
+	... Test: reset_initial_timestamp() is invalid		OK.
+	... Test: set_initial_timestamp() not invalid		OK.
+	... Test: set_initial_timestamp('perf_counter')		OK.
+	... Test: set_initial_timestamp('process_time')		OK.
+	... Test: set_initial_timestamp('time')			OK.
+	... Test: set_initial_timestamp('monotonic')		OK.
+	Testing convert_time_in_seconds_to_DD_HH_MM_SS() method.
+	... Test: convert_time_in_seconds_...() = 0s		OK.
+	... Test: convert_time_in_seconds_...(32:17) = 32:17	OK.
+	... Test: convert_time_in_seconds_...(15:51:09) is ok	OK.
+	... Test: convert_time_...(73 days, 22:04:58) is ok	OK.
+	Testing check_elapsed_time() method.
+	... Test: check_elapsed_time() works			OK.
+	... Test: check_elapsed_time(-235435) works		OK.
+	... Test: check_elapsed_time(5678) works		OK.
+	Testing get_elapsed_time() method.
+	... Test: for perf_counter				OK.
+	... Test: for process_time				OK.
+	... Test: for time					OK.
+	... Test: for monotonic					OK.
+
+
+
+==	Testing class: execution_time_measurement.
+	Testing set, reset, get initial timestamp methods.
+	... Test: get_initial_timestamp() is invalid		OK.
+	... Test: set_initial_timestamp() not invalid		OK.
+	... Test: reset_initial_timestamp() is invalid		OK.
+	... Test: set_initial_timestamp() not invalid		OK.
+	... Test: set_initial_timestamp('perf_counter')		OK.
+	... Test: set_initial_timestamp('perf_counter_ns')	OK.
+	... Test: set_initial_timestamp('process_time')		OK.
+	... Test: set_initial_timestamp('process_time_ns')	OK.
+	... Test: set_initial_timestamp('time')			OK.
+	... Test: set_initial_timestamp('time_ns')		OK.
+	... Test: set_initial_timestamp('monotonic')		OK.
+	... Test: set_initial_timestamp('monotonic_ns')		OK.
+	Testing convert_time_in_seconds_to_DD_HH_MM_SS() method.
+	... Test: convert_time_in_seconds_...() = 0s		OK.
+	... Test: convert_time_in_seconds_...(32:17) = 32:17	OK.
+	... Test: convert_time_in_seconds_...(15:51:09) is ok	OK.
+	... Test: convert_time_...(73 days, 22:04:58) is ok	OK.
+	Testing check_elapsed_time() method.
+	... Test: check_elapsed_time() works			OK.
+	... Test: check_elapsed_time(-235435) works		OK.
+	... Test: check_elapsed_time(5678) works		OK.
+	Testing get_elapsed_time() method.
+	... Test: for perf_counter				OK.
+	... Test: for perf_counter_ns				OK.
+	... Test: for process_time				OK.
+	... Test: for process_time_ns				OK.
+	... Test: for time					OK.
+	... Test: for time_ns					OK.
+	... Test: for monotonic					OK.
+	... Test: for monotonic_ns				OK.
+
+==	Testing class: file_io_operations.
+	... Testing file operations with invalid file.
+	Test: file_io_operations.is_path_valid(...)		OK
+	Test: file_io_operations.open_file_object_read(...)	OK
+	Test: file_io_operations.open_file_object_write(...)	OK
+	Test: file_io_ops[BLAH].open_file_object_write_new(...)	OK
+	Test: file_io_operations.close_file_object(...)		OK
+	... Testing file operations with valid file.
+	Test: file_io_operations.is_path_valid(...)		OK
+	Test: file_io_operations.open_file_object_read(...)	OK
+	Test: file_io_operations.open_file_object_write(...)	OK
+	Test: file_io_ops[BLAH].open_file_object_write_new(...)	OK
+	Testing file operations on files with the same content.
+	... Test: file_io_operations.file_comparison(...)	OK
+	Testing file operations on files with the different content.
+	... Test: file_io_operations.file_comparison(...)	OK
+	Testing file_io_operations.get_file_extension() method.
+	... Test: one file extension				OK
+	... Test: double/dual file extensions			OK
+	... Test: multiple file extensions			OK
+	Testing file_io_operations.check_file_extension() method.
+	... Test: same file extension				OK
+	... Test: different file extensions			OK
+	Test: file_io_BLAH.open_file_object_write_results()	OK
+
+
+==	Testing class: queue_ip_args.
+	Test: queue_ip_args.how_to_use_script()			OK
+-------------------------------------------------
+==>	This script performs genetic technology mapping.
+
+This script can be executed as follows:
+./problem1_solution.py [input JSON netlist] [output JSON technology mapping] [-h]
+
+==>	This other script performs incremental regression testing
+	of my solution for genetic technology mapping.
+
+This other script can be executed as follows:
+./incremental_test.py [input JSON netlist] [output JSON technology mapping] [-h]
+An optional '-h' flag can be used as any input argument
+	to show the brief user manual and exit.
+
+-------------------------------------------------
+	Test: queue_ip_args.print_help_option()			OK
+An optional '-h' flag can be used as any input argument
+	to show the brief user manual and exit.
+
+	Test: queue_ip_args.get_list_of_input_arguments()	OK
+	Test: queue_ip_args.print_all_input_arguments()		OK
+~	Set_of_input_arguments:benchmarks/majority_netlist.json
+	Test: queue_ip_args.get_1st_input_argument()		OK
+/Users/zhiyang/Documents/progetti/bda/2018-wannabe-postdoc-1/utilities/queue_ip_arguments.py:123: UserWarning: 	2nd input argument is missing!!!
+  warnings.warn("	2nd input argument is missing!!!")
+-------------------------------------------------
+==>	This script performs genetic technology mapping.
+
+This script can be executed as follows:
+./problem1_solution.py [input JSON netlist] [output JSON technology mapping] [-h]
+
+==>	This other script performs incremental regression testing
+	of my solution for genetic technology mapping.
+
+This other script can be executed as follows:
+./incremental_test.py [input JSON netlist] [output JSON technology mapping] [-h]
+An optional '-h' flag can be used as any input argument
+	to show the brief user manual and exit.
+
+-------------------------------------------------
+Traceback (most recent call last):
+  File "./incremental_test.py", line 353, in <module>
+    queue_ip_args_tester.test_queue_ip_args()
+  File "/Users/zhiyang/Documents/progetti/bda/2018-wannabe-postdoc-1/utilities/queue_ip_arguments_tester.py", line 413, in test_queue_ip_args
+    queue_ip_args_tester.test_o1_methods()
+  File "/Users/zhiyang/Documents/progetti/bda/2018-wannabe-postdoc-1/utilities/queue_ip_arguments_tester.py", line 131, in test_o1_methods
+    if queue_ip_args.get_2nd_input_argument() is not None:
+  File "/Users/zhiyang/Documents/progetti/bda/2018-wannabe-postdoc-1/utilities/queue_ip_arguments.py", line 124, in get_2nd_input_argument
+    queue_ip_args.input_arguments_error()
+  File "/Users/zhiyang/Documents/progetti/bda/2018-wannabe-postdoc-1/utilities/queue_ip_arguments.py", line 197, in input_arguments_error
+    raise Exception("Error with input arguments.")
+Exception: Error with input arguments.

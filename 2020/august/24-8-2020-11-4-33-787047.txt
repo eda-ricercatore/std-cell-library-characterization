@@ -1,0 +1,30 @@
+==================================================
+Automating incremental regression testing of my software
+	solution for genetic technology mapping.
+
+=	Process the first input argument.
+/Users/zhiyang/Documents/progetti/bda/2018-wannabe-postdoc-1/utilities/queue_ip_arguments.py:206: UserWarning: 	There are no input arguments!!!
+  warnings.warn("	There are no input arguments!!!")
+-------------------------------------------------
+==>	This script performs genetic technology mapping.
+
+This script can be executed as follows:
+./problem1_solution.py [input JSON netlist] [output JSON technology mapping] [-h]
+
+==>	This other script performs incremental regression testing
+	of my solution for genetic technology mapping.
+
+This other script can be executed as follows:
+./incremental_test.py [input JSON netlist] [output JSON technology mapping] [-h]
+An optional '-h' flag can be used as any input argument
+	to show the brief user manual and exit.
+
+-------------------------------------------------
+Traceback (most recent call last):
+  File "./incremental_test.py", line 325, in <module>
+    ip_filename = queue_ip_args.process_1st_ip_arg()
+  File "/Users/zhiyang/Documents/progetti/bda/2018-wannabe-postdoc-1/utilities/queue_ip_arguments.py", line 207, in process_1st_ip_arg
+    queue_ip_args.input_arguments_error()
+  File "/Users/zhiyang/Documents/progetti/bda/2018-wannabe-postdoc-1/utilities/queue_ip_arguments.py", line 197, in input_arguments_error
+    raise Exception("Error with input arguments.")
+Exception: Error with input arguments.
