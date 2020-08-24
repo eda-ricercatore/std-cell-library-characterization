@@ -563,3 +563,178 @@ An optional '-h' flag can be used as any input argument
 	Testing date_time_operations.is_valid_31_day_month() method.
 	... Test: not 31-day month, mm = 4			OK
 	... Test: not 31-day month, mm = 2			OK
+	... Test: 31-day month, dd < 0				OK
+	... Test: 31-day month, dd = 0				OK
+	... Test: 31-day month, dd = 27				OK
+	Testing date_time_operations.is_valid_30_day_month() method.
+	... Test: not 30-day month, mm = 2			OK
+	... Test: not 30-day month, mm = 12			OK
+	... Test: 30-day month, dd < 0				OK
+	... Test: 30-day month, dd = 0				OK
+	... Test: 30-day month, dd = 27				OK
+	Testing date_time_operations.is_valid_date_in_Feb() method.
+	... Test: not February, mm = 12				OK
+	... Test: not February, mm = -2				OK
+	... Test: not February, mm = 14				OK
+	Testing date_time_operations.is_valid_date() method.
+	... Test: single error, dd				OK
+	... Test: single error, -dd				OK
+	... Test: single error, mm				OK
+	... Test: single error, mm				OK
+	... Test: single error, -mm				OK
+	... Test: single error, yy				OK
+	... Test: single error, yy				OK
+	... Test: double errors, dd and yy			OK
+	... Test: double errors, dd and yy			OK
+	... Test: double errors, dd and mm			OK
+	... Test: multiple errors, dd, mm, and yy		OK
+	... Test: no error					OK
+	... Test: no error					OK
+	Testing date_time_operations.check_filename_date_time_format().
+	... Test: single error, dd				OK
+	... Test: single error, yy				OK
+	... Test: single error, mm				OK
+	... Test: multiple errors, dd, mm, yy			OK
+	... Test: multiple errors, dd, mm, yy			OK
+	... Test: valid date & time - leap year			OK
+	... Test: valid date & time				OK
+	... Test: valid date & time				OK
+	Testing date & time tokenization method.
+	... Test: invalid DD-MM-YY-HR-MN-SS-US format		OK
+	... Test: with None object				OK
+	... Test: valid DD-MM-YY-HR-MN-SS-US format		OK
+
+
+==	Testing class: generate_filename.
+	Generate a filename with the current time stamp.
+	Testing filename: 24-8-2020-11-10-55-197944.txt =
+	Check against the format: DD-MM-YY-HH-MM-SS-uS.txt
+	Testing if the filename has the correct file extension.
+	... Test: file extension is '.txt'.			OK
+	Testing if filename without file extension has right format.
+	... Test: filename format is DD-MM-YY-HH-MM-SS-uS.	OK
+	Tokenize generated filename.
+	Testing if 1st token is appropriate date (DD/date value).
+	... Test: DD value is >= 0.				OK
+	... Test: DD value is <= 29, leap year Feb.		OK
+	... Test: DD value is <= 28, non-leap year Feb.		OK
+	... Test: DD value is <= 30, 30-day month.		OK
+	... Test: DD value is <= 31, 31-day month.		OK
+	Testing if 2nd token is appropriate date (MM/month value).
+	... Test: MM/month value is >= 1.			OK
+	... Test: MM/month value is <= 12.			OK
+	Testing if 3rd token is appropriate date (YY/year value).
+	... Test: YY/year value is >= 2000.			OK
+	Testing if 4th token is appropriate date (HH/hour value).
+	... Test: HH/hour value is >= 0.			OK
+	... Test: HH/hour value is <= 23.			OK
+	Testing if 5th token is appropriate date (MM/minute value).
+	... Test: MM/minute value is >= 0.			OK
+	... Test: MM/minute value is <= 59.			OK
+	Testing if 6th token is appropriate date (SS/second value).
+	... Test: SS/second value is >= 0.			OK
+	... Test: SS/second is <= 59.				OK
+	Testing if 7th token is appropriate date (uS/microsecond value).
+	... Test: uS/microsecond value is >= 0.			OK
+	... Test: uS/microsecond value is <= 999999.		OK
+
+
+==	Testing class: misc.
+=	Testing get_absolute_path_to_store_results() method.
+	... Test if static variable = return value		OK
+	... Test if return value = 'None' for invalid path	OK
+=	Testing check_absolute_path_to_store_results() method.
+	... Test: invalid path=None, invalid filename		OK
+	... Test: invalid path, invalid filename=None		OK
+	... Test: invalid path, invalid filename		OK
+	... Test: valid path, invalid filename			OK
+	... Test: valid path, valid filename			OK
+=	Testing add_commit_push_updates_to_git_repository() method.
+	... Test carrying out Git add/commit/push operations.	OK
+
+=	Testing user-defined errors.
+
+
+==	Testing the graph_error class/module.
+	... Test: raise graph_error exception, 2 arguments	OK
+	... Test: raise graph_error exception, 1 argument	OK
+-	-	-	-	-	-	-	-	-	-	-	-	-
+
+=	Testing the parsers package.
+
+	... Test transformation of JSON objects to Python objects.
+	Test: Congleton2017_json				OK
+	Test: WikipediaContributors2018p_1_json			OK
+	Test: WikipediaContributors2018p_2_json			OK
+	Test: WikipediaContributors2018p_3_json			OK
+	Test: WikipediaContributors2018p_4_json			OK
+	... Test parsing of JSON configuration file		OK.
+	... Test writing results to storage location		OK.
+-	-	-	-	-	-	-	-	-	-	-	-	-
+
+=	Testing the data_structures package.
+
+==	Testing class: vertex.
+	... Test default constructor of vertex	 		OK.
+	... Test standard constructor of vertex			OK.
+	... Test instances of default constructor		OK.
+	... Test instances of standard constructor (!= values)	OK.
+	... Test instances of standard constructor (== values)	OK.
+	... Test instances of different constructors		OK.
+	... Test: get_id(), vertex()			 	OK.
+	... Test: get_id(), vertex(72342787) 			OK.
+	... Test: set_id(234)		 			OK.
+
+==	Testing class: graph.
+	... Test default constructor of graph	 		OK.
+	... Test: is_multigraph()		 		OK.
+	... Test: set_multigraph(True)			 	OK.
+	... Test: set_multigraph(False)			 	OK.
+	... Test: is_self_loop_pseudograph()		 	OK.
+	... Test: set_self_loop_pseudograph(True)	 	OK.
+	... Test: set_self_loop_pseudograph(False)	 	OK.
+	... Test: is_hypergraph()		 		OK.
+	... Test: set_hypergraph(True)			 	OK.
+	... Test: set_hypergraph(False)			 	OK.
+	... Test: is_cyclic()		 			OK.
+	... Test: set_cyclic(True)			 	OK.
+	... Test: set_cyclic(False)			 	OK.
+
+==	Testing class: vertex_dg.
+	... Test default constructor of vertex_dg	 	OK.
+	... Test standard constructor of vertex: id		OK.
+	... Test standard constructor of vertex: 3 parameters	OK.
+	... Test standard constructor of vertex: last 2 params	OK.
+	... Test instances of default constructor		OK.
+	... Test instances of standard constructor (!= IDs)	OK.
+	... Test instances of standard constructor (!= values)	OK.
+	... Test instances of standard constructor (== IDs)	OK.
+	... Test instances of standard constructor (== values)	OK.
+	... Test instances of different constructors (1)	OK.
+	... Test instances of different constructors (2)	OK.
+	... Test: get_id(), vertex_dg()			 	OK.
+	... Test: get_id(), vertex_dg(72342787) 		OK.
+	... Test: set_id(234)		 			OK.
+
+==	Testing class: vertex_ug.
+	... Test default constructor of vertex_ug	 	OK.
+	... Test standard constructor of vertex: id		OK.
+	... Test standard constructor of vertex: 2 parameters	OK.
+	... Test standard constructor of vertex: last param	OK.
+	... Test instances of default constructor		OK.
+	... Test instances of standard constructor (!= IDs)	OK.
+	... Test instances of standard constructor (!= values)	OK.
+	... Test instances of standard constructor (== IDs)	OK.
+	... Test instances of standard constructor (== values)	OK.
+	... Test instances of different constructors (1)	OK.
+	... Test instances of different constructors (2)	OK.
+	... Test: get_id(), vertex_ug()			 	OK.
+	... Test: get_id(), vertex_ug(72342787) 		OK.
+	... Test: set_id(234)		 			OK.
+-	-	-	-	-	-	-	-	-	-	-	-	-
+!	!	!	!	!	!	!	!	!	!	!
+>>	Get statistics of the software testing process.
+*	Number of test cases passed:		453
+*	Number of test cases used:		453
+*	Percentage of test cases passed:	100.0%.
+=	Close the file objects for reading (and writing).
