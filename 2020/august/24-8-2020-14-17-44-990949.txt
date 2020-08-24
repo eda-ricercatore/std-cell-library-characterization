@@ -1,0 +1,13 @@
+==================================================
+Automating incremental regression testing of my software
+	solution for genetic technology mapping.
+
+=	Process the first input argument.
+==	Is the 1st input argument a valid path to a file?
+	New output filename is: incremental_test.json
+Traceback (most recent call last):
+  File "./incremental_test.py", line 325, in <module>
+    ip_filename = queue_ip_args.process_1st_ip_arg()
+  File "/Users/zhiyang/Documents/progetti/bda/2018-wannabe-postdoc-1/utilities/queue_ip_arguments.py", line 228, in process_1st_ip_arg
+    raise Exception("1st input argument doesn't have JSON file extension!")
+Exception: 1st input argument doesn't have JSON file extension!
